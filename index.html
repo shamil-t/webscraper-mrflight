@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <script>
+    function load() {
+      var items = []
+
+      var table = document.querySelectorAll('.flightsTable')
+
+      var element = table[0] 
+        console.log(element.getElementsByTagName('tr').length)
+
+        var trL = element.getElementsByTagName('tr').length
+
+        for (var i = 1; i < trL; i++) {
+          // console.log(element.getElementsByTagName('tr')[i],
+          // element.querySelectorAll('td').length)
+
+          var elementTd = element.getElementsByTagName('tr')[i]
+          var tdL = elementTd.querySelectorAll('td')
+
+          console.log(tdL.length)
+
+
+          var flightNum = tdL[0].querySelector('a')
+          console.log(flightNum.innerHTML)
+          var FromA = tdL[1].querySelector('a')
+          console.log(FromA.textContent.trim())
+          var Airline = tdL[2].querySelector('a').textContent.trim()
+          console.log(Airline)
+          var schedule = tdL[3].textContent
+          console.log(schedule.trim())
+          var Arrival = tdL[4].textContent
+          console.log(Arrival.trim())
+          var status = tdL[5].textContent
+          console.log(status.trim())
+
+        }
+
+    
+    }
+  </script>
+</head>
+
+<body onload="load()">
+  <table class="flightsTable flightsTable--airportArrivals">
+    <tbody>
+      <tr class="flightsTable--stripe">
+        <th>Flight</th>
+        <th>From</th>
+        <th class="hidden-xs">Airline</th>
+        <th>Scheduled</th>
+        <th class="hidden-xs">Arrival</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+      <tr class="hidden-xs">
+        <td class="flightsTable-number">
+          <a href="/flights/6e2247/bangalore/new_delhi/" title="6E 2247">6E2247</a>
+        </td>
+        <td>
+          <a href="/india/bengaluru-international-airport/" title="Bangalore BLR Airport">
+            <span class="hidden-xs">Bangalore</span> BLR
+          </a>
+        </td>
+        <td class="flightsTable-airline hidden-xs">
+          <a href="/airlines/indigo-airlines/" title="IndiGo Airlines flight status">IndiGo Airlines</a>
+        </td>
+        <td>10:00</td>
+        <td class="hidden-xs">10:18</td>
+        <td>
+          <div class="statusLabel statusLabel--delayed">Departed Late</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/6e2247/bangalore/new_delhi/?date=2021-02-17"
+            title="Track 6E2247">Track &gt;</a></td>
+      </tr>
+      <tr class="hidden-xs flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/g8204/leh/new_delhi/" title="G8 204">G8204</a></td>
+        <td><a href="/india/leh-kushok-bakula-rimpochee-airport/" title="Leh IXL Airport"><span
+              class="hidden-xs">Leh</span> IXL</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/go-air/" title="Go Air flight status">Go Air</a>
+        </td>
+        <td>10:00</td>
+        <td class="hidden-xs"></td>
+        <td>
+          <div class="statusLabel statusLabel--delayed">Departed Late</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/g8204/leh/new_delhi/?date=2021-02-17" title="Track G8204">Track
+            &gt;</a></td>
+      </tr>
+      <tr class="hidden-xs">
+        <td class="flightsTable-number"><a href="/flights/qr8352/doha/new_delhi/" title="QR 8352">QR8352</a></td>
+        <td><a href="/qatar/doha-international-airport/" title="Doha DOH Airport"><span class="hidden-xs">Doha</span>
+            DOH</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/qatar-airways/"
+            title="Qatar Airways flight status">Qatar Airways</a></td>
+        <td>10:10</td>
+        <td class="hidden-xs">09:52</td>
+        <td>
+          <div class="statusLabel statusLabel--landed">Landed</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/qr8352/doha/new_delhi/?date=2021-02-17"
+            title="Track QR8352">Track &gt;</a></td>
+      </tr>
+      <tr class="flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/sg8937/pune/new_delhi/" title="SG 8937">SG8937</a></td>
+        <td><a href="/india/pune-airport/" title="Pune PNQ Airport"><span class="hidden-xs">Pune</span> PNQ</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/spicejet/"
+            title="SpiceJet flight status">SpiceJet</a></td>
+        <td>10:15</td>
+        <td class="hidden-xs">10:09</td>
+        <td>
+          <div class="statusLabel statusLabel--landed">Landed</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/sg8937/pune/new_delhi/?date=2021-02-17"
+            title="Track SG8937">Track &gt;</a></td>
+      </tr>
+      <tr class="flightsTable-parentFlight">
+        <td class="flightsTable-number"><a href="/flights/9i616/amritsar/new_delhi/" title="9I 616">9I616</a> <a
+            data-flight-id="7761492806" href="#" title="Click to see 1 code-share flights of flight 9I616"
+            class="flightsTable-childrenCount">1</a></td>
+        <td><a href="/india/sri-guru-ram-dass-jee-international,-amritsar-airport/" title="Amritsar ATQ Airport"><span
+              class="hidden-xs">Amritsar</span> ATQ</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/air-india-regional-2/"
+            title="Air India Regional flight status">Air India Regional</a></td>
+        <td>10:15</td>
+        <td class="hidden-xs"></td>
+        <td>
+          <div class="statusLabel statusLabel--active">En-Route</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/9i616/amritsar/new_delhi/?date=2021-02-17"
+            title="Track 9I616">Track &gt;</a></td>
+      </tr>
+      <tr class="flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/6e2023/india/new_delhi/" title="6E 2023">6E2023</a></td>
+        <td><a href="/india/rajiv-gandhi-airport/" title="Hyderabad HYD Airport"><span
+              class="hidden-xs">Hyderabad</span> HYD</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/indigo-airlines/"
+            title="IndiGo Airlines flight status">IndiGo Airlines</a></td>
+        <td>10:20</td>
+        <td class="hidden-xs">10:13</td>
+        <td>
+          <div class="statusLabel statusLabel--landed">Landed</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/6e2023/india/new_delhi/?date=2021-02-17"
+            title="Track 6E2023">Track &gt;</a></td>
+      </tr>
+      <tr>
+        <td class="flightsTable-number"><a href="/flights/6e2404/indore/new_delhi/" title="6E 2404">6E2404</a></td>
+        <td><a href="/india/devi-ahilyabai-holkar-airport/" title="Indore IDR Airport"><span
+              class="hidden-xs">Indore</span> IDR</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/indigo-airlines/"
+            title="IndiGo Airlines flight status">IndiGo Airlines</a></td>
+        <td>10:20</td>
+        <td class="hidden-xs">09:48</td>
+        <td>
+          <div class="statusLabel statusLabel--landed">Landed</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/6e2404/indore/new_delhi/?date=2021-02-17"
+            title="Track 6E2404">Track &gt;</a></td>
+      </tr>
+      <tr class="flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/6e114/dehradun/new_delhi/" title="6E 114">6E114</a></td>
+        <td><a href="/india/dehradun-airport/" title="Dehradun DED Airport"><span class="hidden-xs">Dehradun</span>
+            DED</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/indigo-airlines/"
+            title="IndiGo Airlines flight status">IndiGo Airlines</a></td>
+        <td>10:20</td>
+        <td class="hidden-xs"></td>
+        <td>
+          <div class="statusLabel statusLabel--delayed">Departed Late</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/6e114/dehradun/new_delhi/?date=2021-02-17"
+            title="Track 6E114">Track &gt;</a></td>
+      </tr>
+      <tr class="hidden-xs">
+        <td class="flightsTable-number"><a href="/flights/ai412/lucknow/new_delhi/" title="AI 412">AI412</a></td>
+        <td><a href="/india/chaudhary-charan-singh-international-airport/" title="Lucknow LKO Airport"><span
+              class="hidden-xs">Lucknow</span> LKO</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/air-india/" title="Air India flight status">Air
+            India</a></td>
+        <td>10:20</td>
+        <td class="hidden-xs">09:54</td>
+        <td>
+          <div class="statusLabel statusLabel--landed">Landed</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/ai412/lucknow/new_delhi/?date=2021-02-17"
+            title="Track AI412">Track &gt;</a></td>
+      </tr>
+      <tr class="hidden-xs flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/6e2638/ahmedabad/new_delhi/" title="6E 2638">6E2638</a></td>
+        <td><a href="/india/sardar-vallabhbhai-patel-international-airport/" title="Ahmedabad AMD Airport"><span
+              class="hidden-xs">Ahmedabad</span> AMD</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/indigo-airlines/"
+            title="IndiGo Airlines flight status">IndiGo Airlines</a></td>
+        <td>10:20</td>
+        <td class="hidden-xs">10:18</td>
+        <td>
+          <div class="statusLabel statusLabel--delayed">Departed Late</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/6e2638/ahmedabad/new_delhi/?date=2021-02-17"
+            title="Track 6E2638">Track &gt;</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="flightsTable flightsTable--airportDepartures">
+    <tbody>
+      <tr class="flightsTable--stripe">
+        <th>Flight</th>
+        <th>To</th>
+        <th class="hidden-xs">Airline</th>
+        <th>Scheduled</th>
+        <th class="hidden-xs">Departure</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+      <tr class="hidden-xs">
+        <td class="flightsTable-number"><a href="/flights/ai506/new_delhi/bangalore/" title="AI 506">AI506</a></td>
+        <td><a href="/india/bengaluru-international-airport/" title="Bangalore BLR Airport"><span
+              class="hidden-xs">Bangalore</span> BLR</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/air-india/" title="Air India flight status">Air
+            India</a></td>
+        <td>11:40</td>
+        <td class="hidden-xs">11:40</td>
+        <td>
+          <div class="statusLabel statusLabel--active">En-Route</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/ai506/new_delhi/bangalore/?date=2021-02-17"
+            title="Track AI506">Track &gt;</a></td>
+      </tr>
+      <tr class="hidden-xs flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/6e2433/new_delhi/aizawl/" title="6E 2433">6E2433</a></td>
+        <td><a href="/india/lengpui-airport/" title="Aizawl AJL Airport"><span class="hidden-xs">Aizawl</span> AJL</a>
+        </td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/indigo-airlines/"
+            title="IndiGo Airlines flight status">IndiGo Airlines</a></td>
+        <td>11:40</td>
+        <td class="hidden-xs">11:40</td>
+        <td>
+          <div class="statusLabel statusLabel--active">En-Route</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/6e2433/new_delhi/aizawl/?date=2021-02-17"
+            title="Track 6E2433">Track &gt;</a></td>
+      </tr>
+      <tr class="hidden-xs">
+        <td class="flightsTable-number"><a href="/flights/ai215/new_delhi/kathmandu/" title="AI 215">AI215</a></td>
+        <td><a href="/nepal/tribhuvan-international-airport/" title="Kathmandu KTM Airport"><span
+              class="hidden-xs">Kathmandu</span> KTM</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/air-india/" title="Air India flight status">Air
+            India</a></td>
+        <td>11:45</td>
+        <td class="hidden-xs">11:45</td>
+        <td>
+          <div class="statusLabel statusLabel--active">En-Route</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/ai215/new_delhi/kathmandu/?date=2021-02-17"
+            title="Track AI215">Track &gt;</a></td>
+      </tr>
+      <tr class="flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/g8157/new_delhi/siliguri/" title="G8 157">G8157</a></td>
+        <td><a href="/india/bagdogra-airport/" title="Siliguri IXB Airport"><span class="hidden-xs">Siliguri</span>
+            IXB</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/go-air/" title="Go Air flight status">Go Air</a>
+        </td>
+        <td>11:45</td>
+        <td class="hidden-xs"></td>
+        <td>
+          <div class="statusLabel statusLabel--scheduled">Scheduled</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/g8157/new_delhi/siliguri/?date=2021-02-17"
+            title="Track G8157">Track &gt;</a></td>
+      </tr>
+      <tr>
+        <td class="flightsTable-number"><a href="/flights/i5781/new_delhi/kolkata/" title="I5 781">I5781</a></td>
+        <td><a href="/india/netaji-subhash-chandra-bose-international-airport/" title="Kolkata CCU Airport"><span
+              class="hidden-xs">Kolkata</span> CCU</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/airasia-india/"
+            title="AirAsia India flight status">AirAsia India</a></td>
+        <td>11:45</td>
+        <td class="hidden-xs">11:45</td>
+        <td>
+          <div class="statusLabel statusLabel--active">En-Route</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/i5781/new_delhi/kolkata/?date=2021-02-17"
+            title="Track I5781">Track &gt;</a></td>
+      </tr>
+      <tr class="flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/fz8760/new_delhi/dubai/" title="FZ 8760">FZ8760</a></td>
+        <td><a href="/united-arab-emirates/dubai-international-airport/" title="Dubai DXB Airport"><span
+              class="hidden-xs">Dubai</span> DXB</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/flydubai/"
+            title="FlyDubai flight status">FlyDubai</a></td>
+        <td>11:50</td>
+        <td class="hidden-xs"></td>
+        <td>
+          <div class="statusLabel statusLabel--scheduled">Scheduled</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/fz8760/new_delhi/dubai/?date=2021-02-17"
+            title="Track FZ8760">Track &gt;</a></td>
+      </tr>
+      <tr>
+        <td class="flightsTable-number"><a href="/flights/6e2024/new_delhi/vasco_da_gama/" title="6E 2024">6E2024</a>
+        </td>
+        <td><a href="/india/dabolim-airport/" title="Goa GOI Airport"><span class="hidden-xs">Goa</span> GOI</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/indigo-airlines/"
+            title="IndiGo Airlines flight status">IndiGo Airlines</a></td>
+        <td>11:50</td>
+        <td class="hidden-xs"></td>
+        <td>
+          <div class="statusLabel statusLabel--scheduled">Scheduled</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/6e2024/new_delhi/vasco_da_gama/?date=2021-02-17"
+            title="Track 6E2024">Track &gt;</a></td>
+      </tr>
+      <tr class="flightsTable-parentFlight flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/9i833/new_delhi/bikaner/" title="9I 833">9I833</a> <a
+            data-flight-id="7761507536" href="#" title="Click to see 1 code-share flights of flight 9I833"
+            class="flightsTable-childrenCount">1</a></td>
+        <td><a href="/india/nal-airport/" title="Bikaner BKB Airport"><span class="hidden-xs">Bikaner</span> BKB</a>
+        </td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/air-india-regional-2/"
+            title="Air India Regional flight status">Air India Regional</a></td>
+        <td>11:50</td>
+        <td class="hidden-xs"></td>
+        <td>
+          <div class="statusLabel statusLabel--scheduled">Scheduled</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/9i833/new_delhi/bikaner/?date=2021-02-17"
+            title="Track 9I833">Track &gt;</a></td>
+      </tr>
+      <tr class="hidden-xs">
+        <td class="flightsTable-number"><a href="/flights/ai485/new_delhi/port_blair/" title="AI 485">AI485</a></td>
+        <td><a href="/india/vir-savarkar-international-airport/" title="Port Blair IXZ Airport"><span
+              class="hidden-xs">Port Blair</span> IXZ</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/air-india/" title="Air India flight status">Air
+            India</a></td>
+        <td>11:55</td>
+        <td class="hidden-xs"></td>
+        <td>
+          <div class="statusLabel statusLabel--scheduled">Scheduled</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/ai485/new_delhi/port_blair/?date=2021-02-17"
+            title="Track AI485">Track &gt;</a></td>
+      </tr>
+      <tr class="hidden-xs flightsTable--stripe">
+        <td class="flightsTable-number"><a href="/flights/ai417/new_delhi/ranchi/" title="AI 417">AI417</a></td>
+        <td><a href="/india/birsa-munda-airport/" title="Ranchi IXR Airport"><span class="hidden-xs">Ranchi</span>
+            IXR</a></td>
+        <td class="flightsTable-airline hidden-xs"><a href="/airlines/air-india/" title="Air India flight status">Air
+            India</a></td>
+        <td>12:00</td>
+        <td class="hidden-xs"></td>
+        <td>
+          <div class="statusLabel statusLabel--scheduled">Scheduled</div>
+        </td>
+        <td class="flightsTable-track"><a href="/flights/ai417/new_delhi/ranchi/?date=2021-02-17"
+            title="Track AI417">Track &gt;</a></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
