@@ -121,7 +121,7 @@ app.get("/getdata", (req, res) => {
 
 //initiating Puppeteer
 
-app.listen(PORT, () => {
+app.listen(PORT || process.env.PORT, () => {
   console.info("Server is running on PORT:", PORT);
 });
 module.exports = app;
